@@ -32,17 +32,6 @@ img {
   }
 }
 
-.image-row img {
-  width: 30%;
-  height: 200px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-  .image-row {
-    flex-direction: column;
-  }
-}
-
 h2 {
   margin-top: 0;      
   margin-bottom: 0; 
@@ -254,5 +243,6 @@ width: 30%;
   color: rgb(22, 22, 22);
   background-image: linear-gradient(to right, rgb(249, 12, 205), rgb(251, 250, 251), rgb(246, 202, 8));
 }
+
 
 
