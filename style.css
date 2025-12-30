@@ -21,10 +21,15 @@ img {
 }
 
 .image-row {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .image-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .image-row img {
@@ -33,13 +38,6 @@ img {
   object-fit: cover;
   flex-shrink: 0;
 }
-
-@media (max-width: 768px) {
-  .image-row img {
-    width: 90%;
-    height: auto;
-  }
-
   .image-row {
     flex-direction: column;
   }
