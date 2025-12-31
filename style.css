@@ -1,12 +1,10 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+p {
+  font-size: 20px; 
 }
 
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   background-image: linear-gradient(
     to right,
     rgb(250, 151, 232),
@@ -14,241 +12,250 @@ body {
     rgb(209, 137, 203)
   );
   min-height: 100vh;
-  line-height: 1.6;
 }
 
-p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+/* Global fallback: Non-row images take 100% width */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Typography */
-h1, h2, h3 {
-  font-family: 'Lucida Handwriting', cursive;
-  color: rgb(114, 23, 69);
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
 
-h1 {
-  font-size: 2.5rem;
-  background-color: hsl(325, 76%, 80%);
-  padding: 1rem;
-  text-align: center;
+.image-row img {
+  width: 30%;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .image-row img {
+    width: 90%;
+    height: auto;
+  }
+
+  .image-row {
+    flex-direction: column;
+  }
 }
 
 h2 {
-  font-size: 2rem;
-  margin: 1.5rem 0;
-  color: rgb(114, 23, 69);
+  margin-top: 0;      
+  margin-bottom: 0;  
 }
 
-h3 {
-  font-size: 1.5rem;
+h1, h3 {
   color: rgb(22, 21, 21);
-}
-
-/* Links */
-a {
-  color: rgb(114, 23, 69);
-  text-decoration: none;
-  transition: color 0.3s;
+  font-family: 'Lucida Handwriting', cursive;
+  background-color: hsl(325, 76%, 80%); 
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 a:hover {
   color: rgb(1, 12, 22);
 }
 
-/* Responsive Image Container - REPLACING FLOATS */
-.image-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Image Row */
-.image-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  margin: 2rem 0;
-}
-
-.image-row img {
-  flex: 1 1 300px;
-  max-width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Cards and Sections */
-.Explore, .Us, section, article {
-  border-radius: 1rem;
-  padding: 2rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
 .Explore {
   border: 2px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
   background-color: rgb(222, 154, 235);
   border-top: 6px solid rgb(230, 125, 205);
-  text-align: center;
-  font-size: 1.5rem;
 }
 
-.Us {
+.Us { 
   border: 1px solid black;
+  list-style-type: none;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
   background-color: rgb(247, 242, 246);
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 22px;
+  line-height: 3rem;
+  border-top: 10px solid black; 
+} 
+
+.Explore {
+  text-align: center;
+  font-size: 30px;
+  border-top: 10px solid rgb(222, 154, 246);
+}
+
+li a {
+  display: block;
+}
+
+li a:hover, li a:focus {
+  background-color: rgb(229, 139, 214);
+  color: whitesmoke;
+}
+
+.left {
+  float: left;
+  max-width: 30%; /* Responsive for floats */
+  height: auto;
+}
+
+.right {
+  float: right;
+  max-width: 30%; /* Responsive for floats */
+  height: auto;
 }
 
 .Team {
   background-color: hsl(325, 76%, 80%);
-  padding: 1rem;
+  display: inline;
   font-family: 'Lucida Handwriting', cursive;
 }
 
-/* Mission Section */
+section {
+  background-color: rgb(235, 178, 230);
+  border: 1px solid grey;
+}
+
+article {
+  background-color: rgb(236, 217, 234);
+  border: 1px solid rgb(209, 173, 209);
+}
+
 .mission {
-  columns: 1;
-  margin: 2rem 0;
+  columns: 3 300px;
+  column-rule: 3px solid rgb(244, 137, 201);
+}
+
+.mission p {
+  margin-top: 0px;
 }
 
 .mission h2 {
+  margin-top: 0;
   background-color: rgb(253, 157, 239);
   padding: 1rem;
-  border-radius: 8px;
+  break-inside: avoid;
+  break-before: column;
 }
 
-/* Grid Layouts */
-.main-grid, .new-column {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
-/* Contact Section */
-.Contact, .column-two, .trials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.Contact img, .column-two img {
-  border: 10px double rgb(240, 219, 222);
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-}
-
-/* Forms */
-.Forms {
-  font-family: 'Lucida Handwriting', cursive;
-  font-size: 2rem;
+.Moree {
+  font-size: 30px;
   text-align: center;
-  background-color: rgb(226, 151, 214);
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
+  font-family: 'Lucida Handwriting', cursive;
+  color: rgb(28, 24, 27);
 }
 
-/* Background Sections */
 .MissionB {
   min-height: 100vh;
   background-color: rgb(232, 239, 246);
-  padding: 2rem;
+  background-image: url("https://res.cloudinary.com/dbanlelte/image/upload/v1767127790/Bub_m3ptof.jpg"), linear-gradient(to left, rgb(250, 151, 232), rgb(251, 250, 251), white);
+  background-size: 50%, auto;
+  background-position: right center;
+  background-blend-mode: multiply;
+  background-repeat: repeat-y, no-repeat;
 }
-
+.MissionB img{
+width: 30%;
+}
 .Background {
-  width: 100%;
-  height: 300px;
+  background-image: url("https://res.cloudinary.com/dbanlelte/image/upload/v1767127721/397A3761_1_vatcc1.jpg");
+  width: 3000px;
+  height: 200px;
   background-size: cover;
   background-position: center;
-  margin: 2rem 0;
 }
 
-/* Footer Style */
+.clip {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Lucida Handwriting', cursive;
+  color: rgb(22, 22, 22);
+}
+
+.Contact {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1rem;
+  padding-left: 10px;
+}
+
+.Contact img {
+  border: 10px double rgb(240, 219, 222);
+  margin-top: 20px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 49px;
+  align-items: start;
+  background-image: linear-gradient(to top, rgb(245, 151, 200), white);
+  /* Removed invalid flex-wrap from grid */
+}
+
+.column-two {
+  display: flex;
+  padding-left: 10px;
+  gap: 16px;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.column-two img {
+  border: 10px double pink;
+  /* Removed invalid display: flex from img */
+}
+
+.Forms {
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 50px;
+  text-align: center;
+  background-color: rgb(226, 151, 214);
+  color: white;
+}
+
+h2 {
+  font-size: 40px;
+  color: rgb(114, 23, 69);
+}
+
+.MyB {
+  font-family: 'Lucida Handwriting', cursive;
+  text-align: center;
+}
+
+.new-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 49px;
+}
+
+.column-four {
+  display: flex;
+}
+
+.column-five {
+  display: flex;
+}
+
+.trials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.trials img {
+  border-radius: 50%;
+}
+
 .F {
   text-align: center;
   font-size: 1.5rem;
   color: rgb(22, 22, 22);
   background-image: linear-gradient(to right, rgb(249, 12, 205), rgb(251, 250, 251), rgb(246, 202, 8));
-  padding: 2rem;
-  margin-top: 2rem;
-}
-
-/* Responsive Design */
-@media (min-width: 768px) {
-  p {
-    font-size: 1.1rem;
-  }
-  
-  h1 {
-    font-size: 3rem;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-  }
-  
-  .image-container {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-  
-  .image-container img {
-    max-width: 48%;
-  }
-  
-  .image-row img {
-    flex: 1 1 30%;
-  }
-  
-  .main-grid, .new-column {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .Contact, .column-two, .trials {
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .mission {
-    columns: 2;
-    column-rule: 3px solid rgb(244, 137, 201);
-  }
-  
-  .Contact img, .column-two img {
-    max-width: 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .image-container img {
-    max-width: 32%;
-  }
-  
-  .main-grid, .new-column {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .mission {
-    columns: 3;
-  }
 }
