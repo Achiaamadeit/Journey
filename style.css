@@ -22,7 +22,7 @@ img {
 
 .image-row {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 0;
   width: 100%;
 }
@@ -259,4 +259,5 @@ h2 {
   color: rgb(22, 22, 22);
   background-image: linear-gradient(to right, rgb(249, 12, 205), rgb(251, 250, 251), rgb(246, 202, 8));
 }
+
 
