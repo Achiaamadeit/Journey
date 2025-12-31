@@ -148,9 +148,7 @@ article {
 
 .MissionB {
   min-height: 100vh;
-  background-color: pink;
   background-image: url("https://res.cloudinary.com/dbanlelte/image/upload/v1767127790/Bub_m3ptof.jpg"), linear-gradient(to left, rgb(250, 151, 232), rgb(251, 250, 251), white);
-  background-size: 50%, auto;
   background-position: right center;
   background-blend-mode: multiply;
   background-repeat: repeat-y, no-repeat;
@@ -284,6 +282,7 @@ h2 {
     height: auto;
   }
 }
+
 
 
 
