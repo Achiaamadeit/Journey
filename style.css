@@ -15,35 +15,25 @@ body {
 }
 
 /* Global fallback: Non-row images take 100% width */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .image-row {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap; /* allow images to wrap if needed */
+  justify-content: space-between; /* This will distribute space between images, removing any leftover space on the sides */
+  gap: 0; /* No gap between images */
   width: 100%;
+  flex-wrap: nowrap; /* Prevent wrapping to ensure exactly one row */
 }
 
 .image-row img {
-  width: calc((100% / 3) - 0.66rem); /* 3 per row, account for gap */
-  height: 200px;
+  width: 33.33333%; /* Exactly one third of the container */
+  height: 200px; /* Fixed height, adjust as needed */
   object-fit: cover;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Remove any changes on small screens */
 @media (max-width: 768px) {
   .image-row img {
-    width: calc((100% / 3) - 0.66rem); /* keep 3 per row */
-    height: 150px; /* optional: smaller height for mobile */
-  }
-
-  .image-row {
-    flex-direction: row; /* ensure it stays row */
+    width: 33.33333%; /* Still one third on mobile */
+    height: 150px; /* Adjust height for mobile if needed */
   }
 }
 h2 {
@@ -257,6 +247,7 @@ width: 30%;
   color: rgb(22, 22, 22);
   background-image: linear-gradient(to right, rgb(249, 12, 205), rgb(251, 250, 251), rgb(246, 202, 8));
 }
+
 
 
 
