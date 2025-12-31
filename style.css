@@ -259,6 +259,38 @@ h2 {
   color: rgb(22, 22, 22);
   background-image: linear-gradient(to right, rgb(249, 12, 205), rgb(251, 250, 251), rgb(246, 202, 8));
 }
+@media (max-width: 768px) {
+
+  /* Stack all grid layouts */
+  .main-grid,
+  .new-column {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+@media (max-width: 768px) {
+
+  .column-two,
+  .column-four,
+  .column-five,
+  .Contact,
+  .trials {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+
+  .column-two img,
+  .Contact img,
+  .trials img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+}
+
 
 
 
