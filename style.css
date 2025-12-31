@@ -111,7 +111,6 @@ li a:hover, li a:focus {
 .Team {
   background-color: hsl(325, 76%, 80%);
   display: inline;
-  font-family: 'Lucida Handwriting', cursive;
 }
 
 section {
@@ -144,7 +143,6 @@ article {
 .Moree {
   font-size: 30px;
   text-align: center;
-  font-family: 'Lucida Handwriting', cursive;
   color: rgb(28, 24, 27);
 }
 
@@ -171,7 +169,6 @@ width: 30%;
 .clip {
   text-align: center;
   font-size: 3rem;
-  font-family: 'Lucida Handwriting', cursive;
   color: rgb(22, 22, 22);
 }
 
@@ -224,7 +221,7 @@ h2 {
 }
 
 .MyB {
-  font-family: 'Lucida Handwriting', cursive;
+  font-family: 'Lucida Handwriting';
   text-align: center;
 }
 
@@ -289,6 +286,7 @@ h2 {
     height: auto;
   }
 }
+
 
 
 
